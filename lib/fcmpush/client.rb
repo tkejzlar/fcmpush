@@ -25,6 +25,7 @@ module Fcmpush
       @access_token_expiry = Time.now.utc + access_token_response['expires_in']
       @server_key = configuration.server_key
       @connection = Net::HTTP::Persistent.new
+      @connection.proxy = :ENV
     end
 
     def v1_authorize
