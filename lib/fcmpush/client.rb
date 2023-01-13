@@ -26,6 +26,7 @@ module Fcmpush
       @server_key = configuration.server_key
       @connection = Net::HTTP::Persistent.new
       @connection.proxy = :ENV
+      pp :ENV
     end
 
     def v1_authorize
